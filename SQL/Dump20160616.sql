@@ -24,12 +24,12 @@ DROP TABLE IF EXISTS `Dispositivo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Dispositivo` (
   `idDispositivo` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) DEFAULT NULL,
-  `descripcion` varchar(45) DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `descripcion` varchar(500) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
-  `ubicacion` varchar(45) DEFAULT NULL,
+  `ubicacion` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idDispositivo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3456766 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3456767 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `Dispositivo` (
 
 LOCK TABLES `Dispositivo` WRITE;
 /*!40000 ALTER TABLE `Dispositivo` DISABLE KEYS */;
-INSERT INTO `Dispositivo` VALUES (3456765,'BOMBILLO SALA','10 watts',0,'Sala del segundo piso');
+INSERT INTO `Dispositivo` VALUES (3456765,'LAMPARA','Lampara de noche para acompañar tus noches de trabajo y/o estudio.',0,'dormitorio'),(3456766,'BOMBILLO','Luces del jardín, ya no tendrás que salir para apagar las luces',1,'jardin');
 /*!40000 ALTER TABLE `Dispositivo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,9 +53,9 @@ CREATE TABLE `Registro` (
   `idRegistro` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(200) DEFAULT NULL,
   `usuario` varchar(45) DEFAULT NULL,
-  `fecha` varchar(45) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
   PRIMARY KEY (`idRegistro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +64,7 @@ CREATE TABLE `Registro` (
 
 LOCK TABLES `Registro` WRITE;
 /*!40000 ALTER TABLE `Registro` DISABLE KEYS */;
+INSERT INTO `Registro` VALUES (21,'Se apagÃƒÂ³BOMBILLO de  jardin','james.garzon','2016-06-16 02:22:18'),(22,'Se encendióBOMBILLO de  jardin','james.garzon','2016-06-16 02:22:42'),(23,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:23:11'),(24,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:25:29'),(25,'Se apagó LAMPARA de dormitorio','james.garzon','2016-06-16 02:25:31'),(26,'Se encendió LAMPARA de dormitorio','james.garzon','2016-06-16 02:25:33'),(27,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:25:34'),(28,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:39:27'),(29,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:40:19'),(30,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:40:47'),(31,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:40:49'),(32,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:41:16'),(33,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:42:12'),(34,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:42:17'),(35,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:42:30'),(36,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:42:35'),(37,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:43:15'),(38,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:43:20'),(39,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:43:27'),(40,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:43:35'),(41,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:44:07'),(42,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:44:21'),(43,'Se apagó BOMBILLO de jardin','james.garzon','2016-06-16 02:44:27'),(44,'Se apagó LAMPARA de dormitorio','james.garzon','2016-06-16 02:44:35'),(45,'Se encendió LAMPARA de dormitorio','james.garzon','2016-06-16 02:44:47'),(46,'Se encendió BOMBILLO de jardin','james.garzon','2016-06-16 02:44:49'),(47,'Se apagó LAMPARA de dormitorio','james.garzon','2016-06-16 02:45:20');
 /*!40000 ALTER TABLE `Registro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-15 11:48:54
+-- Dump completed on 2016-06-16 10:10:58
