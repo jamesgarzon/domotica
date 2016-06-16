@@ -4,11 +4,27 @@ domoticaApp.factory('Dispositivo',function($http, $route, $q){
 
 var servicio = {};
 
-// Servicio para listar productos
+// Servicio para listar dispositivos
 servicio.listar = function () {
 	var defered = $q.defer();
 	var promise = defered.promise;
 	$http.get('services/listarDispositivos.php')
+			.success(function(data) {
+					defered.resolve(data);
+			})
+			.error(function(err) {
+					defered.reject(err);
+			});
+
+	return promise;
+};
+
+// Servicio para actualizar dispositivo
+servicio.actualizarDispositivo = function (dispositivo) {
+	var defered = $q.defer();
+	var promise = defered.promise;
+	var data = JSON.stringify(dispositivo);
+	$http.post('services/actualizarDispositivo.php', data)
 			.success(function(data) {
 					defered.resolve(data);
 			})

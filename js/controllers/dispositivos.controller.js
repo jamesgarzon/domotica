@@ -29,6 +29,13 @@ function dispositivosController($scope, $http, Dispositivo, Registro) {
 			accion = 'apagó';
 		}
 
+		Dispositivo.actualizarDispositivo(dispositivo)
+		.then(function (data) {
+			Materialize.toast('Se actualizó el dispositivo exitosamente', 5000) // 4000 is the duration of the toast
+		})
+		.catch(function (err) {
+			Materialize.toast('Problemas actualizando el dispositivo', 5000) // 4000 is the duration of the toast
+		})
 		var registro = {
 			usuario:'james.garzon',
 			descripcion: 'Se '+ accion + ' ' + dispositivo.nombre + ' de '+ dispositivo.ubicacion
