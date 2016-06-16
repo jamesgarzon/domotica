@@ -7,48 +7,23 @@
 <link rel="stylesheet" type="text/css" href="lib/materialize/css/materialize.min.css">
 </head>
 <body>
-<div ng-controller="homeCtrl">
 
-	<div class="container">
-		<div class="valign-wrapper center">
-			<h2 class="valign teal-text"> <b> DOMOTICA HOGAR </b> <br> <small class="grey-text">Sistema de automatizacion para una vivienda</small></h2>
-		</div>
-	</div>
-
-
-      <div class="row center">
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-							<img ng-if="estado" src="images/sala-principal.jpg">
-              <img ng-if="!estado" src="images/sala-principal-apagado.jpg">
-              <span class="card-title"><b>Bombillo sala principal</b></span>
-            </div>
-            <div class="card-content">
-              <p class="justify"> Aqui podras encender o apagar el bombillo ubicado en la sala principal.</p>
-            </div>
-            <div class="card-action">
-             <!-- Switch -->
-				<div class="switch">
-				  <label>
-				    Apagado
-				    <input type="checkbox" ng-model="estado" ng-click="cambiarEstadoLed()">
-				    <span class="lever"></span>
-				    Encendido
-				  </label>
-				</div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div ng-view>
 
 </div>
 
-<script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+<!-- <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="lib/materialize/js/materialize.min.js"></script>
-<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular.min.js"></script> -->
 
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="bower_components/materialize/js/materialize.min.js"></script> -->
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="bower_components/materialize/bin/materialize.js"></script>
+<script type="text/javascript" src="bower_components/angular-materialize/src/angular-materialize.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers/dispositivos.controller.js"></script>
 </body>
 
 </html>

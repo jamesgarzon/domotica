@@ -1,0 +1,31 @@
+	<div class="container">
+		<div class="valign-wrapper center">
+			<h2 class="valign teal-text"> <b> DOMOTICA HOGAR </b> <br> <small class="grey-text">Sistema de automatizacion para una vivienda</small></h2>
+		</div>
+	</div>
+
+      <div class="row center">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+							<img ng-if="vm.estado" src="images/sala-principal.jpg">
+              <img ng-if="!vm.estado" src="images/sala-principal-apagado.jpg">
+              <span class="card-title"><b>Bombillo sala principal</b></span>
+            </div>
+            <div class="card-content">
+              <p class="justify"> Aqui podras encender o apagar el bombillo ubicado en la sala principal.</p>
+            </div>
+            <div class="card-action">
+
+				<div class="switch">
+				  <label>
+				    Apagado
+				    <input type="checkbox" ng-model="vm.estado" ng-click="vm.cambiarEstadoLed()">
+				    <span class="lever"></span>
+				    Encendido
+				  </label>
+				</div>
+            </div>
+          </div>
+        </div>
+      </div>

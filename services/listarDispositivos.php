@@ -1,16 +1,7 @@
 <?php
-// require_once('../SQL/ListarDispositivosSQL.php');
+require_once('../SQL/listarDispositivosSQL.php');
 
-// //Variables Globales
-// $retornoServicio = array();
-//
-// $ListaDispositivos = ListarDispositivosSQL();
-//
-// // for($i = 0; $i < sizeof($listaMaterial);$i++) {
-// //
-// // 	$retornoServicio[$i]["codigoMaterial"] = $listaMaterial[$i]["COD_MATERIAL"];
-// //     $retornoServicio[$i]["nombreMaterial"] = $listaMaterial[$i]["NOMBRE_MATERIAL"];
-// // }
-//
-// echo(json_encode($ListaDispositivos));
+$ListaDispositivos = ListarDispositivosSQL();
+echo json_encode($ListaDispositivos);
+
 ?>

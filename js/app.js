@@ -1,11 +1,17 @@
-var domoticaApp = angular.module('domoticaApp',[]);
+var domoticaApp = angular.module('domoticaApp',['ngRoute']);
 
-domoticaApp.controller('homeCtrl', function($scope, $http) {
-	
-	$scope.cambiarEstadoLed = function() {
-		var data = JSON.stringify({estado:$scope.estado})
-		$http.post('services/cambiarEstadoLed.php?estado',data,function(data) {
-			console.log("Respuesta: "+ data);
-		});
-	};
-});
+domoticaApp.config(function($routeProvider){
+  $routeProvider
+  .when("/", {
+      templateUrl: "views/home.html",
+      controller: "homeCtrl",
+      controllerAs: "vm"
+    }
+  )
+  .when("/dispositivos", {
+      templateUrl: "views/dispositivos.html",
+      controller: "dispositivosCtrl",
+      controllerAs: "vm"
+    }
+  );
+})
