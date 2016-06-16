@@ -5,22 +5,22 @@
 	</div>
 
       <div class="row center">
-        <div class="col s12 m4">
+        <div class="col s12 m4" ng-repeat="dispositivo in vm.dispositivos">
           <div class="card">
             <div class="card-image">
-							<img ng-if="vm.estado" src="images/sala-principal.jpg">
-              <img ng-if="!vm.estado" src="images/sala-principal-apagado.jpg">
-              <span class="card-title"><b>Bombillo sala principal</b></span>
+							<img ng-if="dispositivo.estado" ng-src="images/{{dispositivo.ubicacion}}-on.jpg" height="200px">
+              <img ng-if="!dispositivo.estado" ng-src="images/{{dispositivo.ubicacion}}-off.jpg" height="200px">
+              <span class="card-title"><b>{{dispositivo.nombre}}</b></span>
             </div>
             <div class="card-content">
-              <p class="justify"> Aqui podras encender o apagar el bombillo ubicado en la sala principal.</p>
+              <p class="justify"> {{dispositivo.descripcion}}</p>
             </div>
             <div class="card-action">
 
 				<div class="switch">
 				  <label>
 				    Apagado
-				    <input type="checkbox" ng-model="vm.estado" ng-click="vm.cambiarEstadoLed()">
+				    <input type="checkbox" ng-model="dispositivo.estado" ng-click="vm.cambiarEstadoDispositivo(dispositivo)">
 				    <span class="lever"></span>
 				    Encendido
 				  </label>

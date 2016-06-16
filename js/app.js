@@ -1,4 +1,4 @@
-var domoticaApp = angular.module('domoticaApp',['ngRoute']);
+var domoticaApp = angular.module('domoticaApp',['ngRoute','ui.materialize']);
 
 domoticaApp.config(function($routeProvider){
   $routeProvider
