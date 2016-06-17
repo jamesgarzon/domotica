@@ -9,4 +9,4 @@ GPIO.setmode(GPIO.BCM)
 #Aqui indicamos cual es el puerto que utilizaremos, y que es de salida
 GPIO.setup(17, GPIO.OUT)
 GPIO.output(17, False)
-GPIO.cleanup()
+# GPIO.cleanup()

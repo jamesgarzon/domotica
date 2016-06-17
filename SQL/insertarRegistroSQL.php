@@ -10,6 +10,3 @@ function insertarRegistroSQL($descripcion, $usuario){
 	return $result;
  }
 ?>
-
-
-<!-- INSERT INTO `domotica`.`Registro` (`descripcion`, `usuario`, `fecha`) VALUES ('Se apagan las luces del Jardín', 'james.garzon', '2016-06-16 15:34:45'); -->

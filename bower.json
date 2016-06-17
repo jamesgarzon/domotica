@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "angular-materialize": "^0.1.8",
-    "angular-route": "^1.5.7"
+    "angular-route": "^1.5.7",
+    "material-design-icons": "^2.2.3"
   }
 }

@@ -13,5 +13,17 @@ domoticaApp.config(function($routeProvider){
       controller: "dispositivosCtrl",
       controllerAs: "vm"
     }
+  )
+  .when("/registrarDispositivo", {
+      templateUrl: "views/registrarDispositivo.html",
+      controller: "registrarDispositivoCtrl",
+      controllerAs: "vm"
+    }
+  )
+  .when("/dispositivos/:idDispositivo", {
+      templateUrl: "views/dispositivo.html",
+      controller: "dispositivoCtrl",
+      controllerAs: "vm"
+    }
   );
 })

@@ -1,9 +1,6 @@
-	<div class="container">
-		<div class="valign-wrapper center">
-			<h2 class="valign teal-text"> <b> DOMOTICA HOGAR </b> <br> <small class="grey-text">Sistema de automatizacion para una vivienda</small></h2>
-		</div>
-	</div>
-
+<div class="hero-unit row teal">
+	<h2 class="white-text">Mis dispositivos</h2>
+</div>
       <div class="row center">
         <div class="col s12 m4" ng-repeat="dispositivo in vm.dispositivos">
           <div class="card">
@@ -29,3 +26,83 @@
           </div>
         </div>
       </div>
+
+
+			<!-- Modal Trigger -->
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="waves-effect waves-light btn-floating btn-large red modal-trigger" href="#modalRegistrarDispositivo">
+    <i class="material-icons">add</i>
+  </a>
+</div>
+<!-- Modal Structure -->
+<div id="modalRegistrarDispositivo" class="modal">
+	<div class="modal-content">
+		<h4>Registrar un nuevo dispositivo</h4>
+		<div class="row">
+		    <form class="col s12" ng-submit="vm.registrarDispositivo(vm.nuevoDispositivo)">
+		      <div class="row">
+						<!-- ID DISPOSITIVO -->
+		        <div class="input-field col l5 s10">
+		          <i class="material-icons prefix">fingerprint</i>
+		          <input id="id_dispositivo" type="number" class="validate" ng-model="vm.nuevoDispositivo.idDispositivo" required>
+		          <label for="id_dispositivo">*ID Dispositivo</label>
+		        </div>
+						<!-- NOMBRE DISPOSITIVO -->
+		        <div class="input-field col l5 s10">
+		          <i class="material-icons prefix">lightbulb_outline</i>
+		          <input id="nombre_dispositivo" type="tel" class="validate" ng-model="vm.nuevoDispositivo.nombre" required>
+		          <label for="nombre_dispositivo">*Nombre</label>
+		        </div>
+
+						<!-- UBICACION DISPOSITIVO -->
+	          <div class="input-field col l5 s10">
+	            <select ng-model="vm.nuevoDispositivo.ubicacion" ng-options="ubicacion.nombre for ubicacion in vm.ubicaciones" material-select watch required>
+	              <option value="">-- Seleccione una ubicación --</option>
+	            </select>
+	            <label>*Ubicación</label>
+	          </div>
+
+						<!-- GPIO DISPOSITIVO -->
+	          <div class="input-field col l5 s10">
+	            <select ng-model="vm.nuevoDispositivo.GPIO" ng-options="GPIO for GPIO in vm.GPIOs" material-select watch>
+	              <option value="">-- Seleccione un GPIO --</option>
+	            </select>
+	            <label>*GPIO</label>
+	          </div>
+
+						<!-- DESCRIPCION DISPOSITIVO -->
+						<div class="input-field col s10">
+		          <i class="material-icons prefix">lightbulb_outline</i>
+		          <input id="descripcion_dispositivo" type="tel" class="validate" required ng-model="vm.nuevoDispositivo.descripcion">
+		          <label for="descripcion_dispositivo">Descripcion (Opcional)</label>
+		        </div>
+
+					</div>
+						<div class="row">
+
+						<button class="btn waves-effect waves-light " type="submit" name="action">Crear Dispositivo
+							 <i class="material-icons right">send</i>
+						 </button>
+						 <button class="btn waves-effect waves-light grey" name="action2">Cancelar
+ 							 <i class="material-icons right">keyboard_return</i>
+ 						 </button>
+					 </div>
+
+		    </form>
+		  </div>
+	</div>
+	<!-- <div class="modal-footer">
+		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+	</div> -->
+</div>
+
+<script type="text/javascript">
+$('.modal-trigger').leanModal({
+	dismissible: true, // Modal can be dismissed by clicking outside of the modal
+	opacity: .5, // Opacity of modal background
+	in_duration: 300, // Transition in duration
+	out_duration: 200, // Transition out duration
+}
+);
+
+</script>

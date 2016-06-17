@@ -20,7 +20,7 @@ servicio.listar = function () {
 };
 
 // Servicio para actualizar dispositivo
-servicio.actualizarGPIO = function (GPIO) {
+servicio.actualizar = function (GPIO) {
 	var defered = $q.defer();
 	var promise = defered.promise;
 	var data = JSON.stringify(GPIO);

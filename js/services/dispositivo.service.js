@@ -34,6 +34,42 @@ servicio.actualizarDispositivo = function (dispositivo) {
 
 	return promise;
 };
+
+// Servicio para registrar dispositivo
+servicio.registrar = function (dispositivo) {
+	var defered = $q.defer();
+	var promise = defered.promise;
+	var data = JSON.stringify(dispositivo);
+	$http.post('services/registrarDispositivo.php', data)
+			.success(function(data) {
+					defered.resolve(data);
+			})
+			.error(function(err) {
+					defered.reject(err);
+			});
+
+	return promise;
+};
+
+// Servicio para actualizar dispositivo
+servicio.cambiarEstadoDispositivo = function (GPIO, estado) {
+	var defered = $q.defer();
+	var promise = defered.promise;
+	var data = {
+  estado: estado,
+  GPIO : GPIO
+};
+	data = JSON.stringify(data);
+	$http.post('services/actualizarDispositivo.php', data)
+			.success(function(data) {
+					defered.resolve(data);
+			})
+			.error(function(err) {
+					defered.reject(err);
+			});
+
+	return promise;
+};
 //
 // // Servicio para crear un nuevo productos
 // // parametro productoACrear => objeto estudiante que se va a actualizar
