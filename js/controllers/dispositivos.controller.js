@@ -17,8 +17,8 @@ function dispositivosController($scope, $http, Dispositivo, Registro) {
 
 	function cambiarEstadoDispositivo(dispositivo) {
 
-		var data = JSON.stringify({estado:$scope.estado});
-		$http.post('services/cambiarEstadoLed.php?estado',data,function(data) {
+		var data = JSON.stringify({estado:dispositivo.estado});
+		$http.post('services/cambiarEstadoLed.php',data,function(data) {
 			console.log("Respuesta: "+ data);
 		});
 
