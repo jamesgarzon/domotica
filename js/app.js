@@ -14,16 +14,21 @@ domoticaApp.config(function($routeProvider){
       controllerAs: "vm"
     }
   )
-  .when("/registrarDispositivo", {
-      templateUrl: "views/registrarDispositivo.html",
-      controller: "registrarDispositivoCtrl",
-      controllerAs: "vm"
-    }
-  )
   .when("/dispositivos/:idDispositivo", {
       templateUrl: "views/dispositivo.html",
       controller: "dispositivoCtrl",
       controllerAs: "vm"
     }
-  );
+  )
+  .when("/registros", {
+      templateUrl: "views/registros.html",
+      controller: "registrosCtrl",
+      controllerAs: "vm"
+    }
+  )
+  .otherwise( {
+      redirectTo: '/'
+    }
+  )
+  ;
 })

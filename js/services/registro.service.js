@@ -19,6 +19,21 @@ servicio.insertar = function (registro) {
 
 	return promise;
 };
+
+// Servicio para listar productos
+servicio.listar = function () {
+	var defered = $q.defer();
+	var promise = defered.promise;
+	$http.get('services/listarRegistros.php')
+			.success(function(data) {
+					defered.resolve(data);
+			})
+			.error(function(err) {
+					defered.reject(err);
+			});
+
+	return promise;
+};
 //
 // // Servicio para crear un nuevo productos
 // // parametro productoACrear => objeto estudiante que se va a actualizar

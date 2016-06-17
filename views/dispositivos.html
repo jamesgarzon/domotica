@@ -13,15 +13,24 @@
               <p class="justify"> {{dispositivo.descripcion}}</p>
             </div>
             <div class="card-action">
+							<div class="row">
+								<div class="col s4">
+									<a class="btn waves-effect waves-light orange btn-floating" ng-href="#/dispositivos/{{dispositivo.idDispositivo}}" type="submit" name="action"> <i class="material-icons right">edit</i>
+									 </a>
+								</div>
+								<div class="col s8">
+									<div class="switch">
+										<label>
+											Apagado
+											<input type="checkbox" ng-model="dispositivo.estado" ng-click="vm.cambiarEstadoDispositivo(dispositivo)">
+											<span class="lever"></span>
+											Encendido
+										</label>
+									</div>
+								</div>
+							</div>
 
-				<div class="switch">
-				  <label>
-				    Apagado
-				    <input type="checkbox" ng-model="dispositivo.estado" ng-click="vm.cambiarEstadoDispositivo(dispositivo)">
-				    <span class="lever"></span>
-				    Encendido
-				  </label>
-				</div>
+
             </div>
           </div>
         </div>
@@ -50,7 +59,7 @@
 						<!-- NOMBRE DISPOSITIVO -->
 		        <div class="input-field col l5 s10">
 		          <i class="material-icons prefix">lightbulb_outline</i>
-		          <input id="nombre_dispositivo" type="tel" class="validate" ng-model="vm.nuevoDispositivo.nombre" required>
+		          <input id="nombre_dispositivo" type="text" class="validate" ng-model="vm.nuevoDispositivo.nombre" required>
 		          <label for="nombre_dispositivo">*Nombre</label>
 		        </div>
 
@@ -73,7 +82,7 @@
 						<!-- DESCRIPCION DISPOSITIVO -->
 						<div class="input-field col s10">
 		          <i class="material-icons prefix">lightbulb_outline</i>
-		          <input id="descripcion_dispositivo" type="tel" class="validate" required ng-model="vm.nuevoDispositivo.descripcion">
+		          <input id="descripcion_dispositivo" type="text" class="validate" ng-model="vm.nuevoDispositivo.descripcion">
 		          <label for="descripcion_dispositivo">Descripcion (Opcional)</label>
 		        </div>
 

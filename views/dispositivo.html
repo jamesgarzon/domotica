@@ -1,1 +1,62 @@
-dispositivo 334
+<div class="hero-unit row teal">
+	<h2 class="white-text">{{vm.dispositivo.nombre}}</h2>
+</div>
+<div class="container">
+
+  <div class="row">
+      <form class="col s12" ng-submit="vm.actualizarDispositivo(vm.dispositivo)">
+        <div class="row">
+          <!-- ID DISPOSITIVO -->
+          <div class="input-field col s12">
+            <i class="material-icons prefix">fingerprint</i>
+            <input id="id_dispositivo" type="number" class="validate" ng-model="vm.dispositivo.idDispositivo" required>
+            <label for="id_dispositivo">*ID Dispositivo</label>
+          </div>
+          <!-- NOMBRE DISPOSITIVO -->
+          <div class="input-field col s12">
+            <i class="material-icons prefix">lightbulb_outline</i>
+            <input id="nombre_dispositivo" type="text" class="validate" ng-model="vm.dispositivo.nombre" required>
+            <label for="nombre_dispositivo">*Nombre</label>
+          </div>
+
+          <!-- UBICACION DISPOSITIVO -->
+          <div class="input-field col l6 s12">
+            <select ng-model="vm.dispositivo.ubicacion" ng-options="ubicacion.nombre for ubicacion in vm.ubicaciones" material-select watch required>
+              <option value="">-- Seleccione una ubicación --</option>
+            </select>
+            <label>*Ubicación</label>
+          </div>
+
+          <!-- GPIO DISPOSITIVO -->
+          <div class="input-field col l6 s12">
+            <select ng-model="vm.dispositivo.GPIO" ng-options="GPIO for GPIO in vm.GPIOs" material-select watch>
+              <option value="">-- Seleccione un GPIO --</option>
+            </select>
+            <label>*GPIO</label>
+          </div>
+
+          <!-- DESCRIPCION DISPOSITIVO -->
+          <div class="input-field col s12">
+            <i class="material-icons prefix">lightbulb_outline</i>
+            <input id="descripcion_dispositivo" type="text" class="validate" ng-model="vm.dispositivo.descripcion">
+            <label for="descripcion_dispositivo">Descripcion (Opcional)</label>
+          </div>
+
+        </div>
+          <div class="row center">
+
+          <button class="btn waves-effect waves-light btn-large orange" type="submit" name="action">Actualizar dispositivo
+             <i class="material-icons right">send</i>
+           </button>
+				 </div>
+					 <div class="row center">
+
+					 <a class="btn waves-effect waves-light btn-large red"  ng-click="vm.eliminarDispositivo(vm.dispositivo)" name="action">Eliminar dispositivo
+              <i class="material-icons right">delete</i>
+            </a>
+         </div>
+
+      </form>
+    </div>
+
+    </div>

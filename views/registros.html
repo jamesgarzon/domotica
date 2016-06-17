@@ -1,0 +1,55 @@
+<div class="hero-unit row teal">
+	<h2 class="white-text">Registro de eventos</h2>
+</div>
+<div class="row">
+  <div class="col s12">
+    <div class="input-field">
+      <i class="material-icons prefix">search</i>
+      <input id="id_dispositivo" type="text" class="validate" ng-model="busqueda">
+      <label for="id_dispositivo">Busqueda</label>
+    </div>
+  </div>
+</div>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Usuairo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="registro in vm.registros | filter:busqueda">
+      <td>{{registro.fecha}}</td>
+      <td>{{registro.idRegistro}}</td>
+      <td>{{registro.descripcion}}</td>
+      <td>{{registro.usuario}}</td>
+    </tr>
+  </tbody>
+</table> -->
+<div class="container">
+
+
+<ul class="collection">
+   <li class="collection-item avatar" ng-repeat="registro in vm.registros | filter:busqueda | filter:busquedaFecha:validaFecha">
+     <i class="material-icons circle red">person</i>
+     <span class="title"><b>{{registro.usuario}}</b></span>
+     <p>{{registro.descripcion}} <br>
+        <span class="grey-text">{{registro.fecha | date:'fullDate'}} a las {{registro.fecha | date:'mediumTime'}}</span>
+     </p>
+     <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+   </li>
+
+
+ </ul>
+</div>
+
+
+<!-- <script type="text/javascript">
+$('.datepicker').pickadate({
+ selectMonths: true, // Creates a dropdown to control month
+ selectYears: 15 // Creates a dropdown of 15 years to control year
+});
+</script> -->

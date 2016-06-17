@@ -19,6 +19,21 @@ servicio.listar = function () {
 	return promise;
 };
 
+// Servicio para listar dispositivos
+servicio.obtenerDispositivo = function (idDispositivo) {
+	var defered = $q.defer();
+	var promise = defered.promise;
+	$http.get('services/obtenerDispositivo.php?idDispositivo='+idDispositivo)
+			.success(function(data) {
+					defered.resolve(data);
+			})
+			.error(function(err) {
+					defered.reject(err);
+			});
+
+	return promise;
+};
+
 // Servicio para actualizar dispositivo
 servicio.actualizarDispositivo = function (dispositivo) {
 	var defered = $q.defer();
@@ -61,6 +76,22 @@ servicio.cambiarEstadoDispositivo = function (GPIO, estado) {
 };
 	data = JSON.stringify(data);
 	$http.post('services/actualizarDispositivo.php', data)
+			.success(function(data) {
+					defered.resolve(data);
+			})
+			.error(function(err) {
+					defered.reject(err);
+			});
+
+	return promise;
+};
+
+// Servicio para registrar dispositivo
+servicio.eliminar = function (idDispositivo) {
+	var defered = $q.defer();
+	var promise = defered.promise;
+	var data = JSON.stringify({idDispositivo : idDispositivo});
+	$http.post('services/eliminarDispositivo.php', data)
 			.success(function(data) {
 					defered.resolve(data);
 			})
