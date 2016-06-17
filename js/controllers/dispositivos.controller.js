@@ -39,7 +39,7 @@ function dispositivosController($scope, $http, Dispositivo, Registro, GPIO) {
 
 	function cambiarEstadoDispositivo(dispositivo) {
 
-		Dispositivo.cambiarEstadoDispositivo(dispositivo.estado, dispositivo.GPIO)
+		Dispositivo.cambiarEstadoDispositivo(dispositivo.GPIO, dispositivo.estado)
 		.then(function (data) {
 			// Materialize.toast('Cambio de estado exitoso', 5000) // 4000 is the duration of the toast
 		})
