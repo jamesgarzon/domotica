@@ -75,7 +75,7 @@ servicio.cambiarEstadoDispositivo = function (GPIO, estado) {
   GPIO : GPIO
 };
 	data = JSON.stringify(data);
-	$http.post('services/actualizarDispositivo.php', data)
+	$http.post('services/cambiarEstadoLed.php', data)
 			.success(function(data) {
 					defered.resolve(data);
 			})

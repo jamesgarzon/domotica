@@ -75,11 +75,16 @@ function dispositivoController($scope, $http, Dispositivo, Registro, GPIO, $rout
 	}
 
 	function eliminarDispositivo(dispositivo) {
+		var GPIOAActualizar = {
+			idPin : dispositivo.GPIO,
+			disponible : true
+		 }
 		Dispositivo.eliminar(dispositivo.idDispositivo)
 		.then(function (data) {
 			Materialize.toast('Dispositivo eliminado correctamente', 5000) // 4000 is the duration of the toast
 			$location.path('/dispositivos');
 
+			GPIO.actualizar(GPIOAActualizar);
 		})
 		.catch(function (err) {
 			Materialize.toast('Problemas eliminando el dispositivo <br>'+ err, 5000) // 4000 is the duration of the toast
